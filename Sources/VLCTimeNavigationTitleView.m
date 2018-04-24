@@ -16,8 +16,8 @@
 
 @implementation VLCTimeNavigationTitleView
 
-- (void)awakeFromNib {
-
+- (void)awakeFromNib
+{
     self.minimizePlaybackButton.accessibilityLabel = NSLocalizedString(@"MINIMIZE_PLAYBACK_VIEW", nil);
     self.aspectRatioButton.accessibilityLabel = NSLocalizedString(@"VIDEO_ASPECT_RATIO_BUTTON", nil);
     [self.aspectRatioButton setImage:[UIImage imageNamed:@"ratioIcon"] forState:UIControlStateNormal];

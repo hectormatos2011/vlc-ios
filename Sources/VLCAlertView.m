@@ -39,7 +39,8 @@
     [self dismissWithClickedButtonIndex:self.cancelButtonIndex animated:NO];
 }
 
-- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
     if (self.completion) {
         self.completion(buttonIndex == self.cancelButtonIndex, buttonIndex);
         self.completion = nil;
@@ -49,8 +50,9 @@
 
 - (void)show
 {
-    if (self.completion)
+    if (self.completion) {
         self.delegate = self;
+    }
 
     [super show];
 }

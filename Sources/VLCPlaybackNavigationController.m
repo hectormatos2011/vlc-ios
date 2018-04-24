@@ -26,8 +26,9 @@
 - (BOOL)shouldAutorotate
 {
     id topVC = self.topViewController;
-    if ([topVC isKindOfClass:[VLCMovieViewController class]])
+    if ([topVC isKindOfClass:[VLCMovieViewController class]]) {
         return ![(VLCMovieViewController *)topVC rotationIsDisabled];
+    }
 
     return YES;
 }

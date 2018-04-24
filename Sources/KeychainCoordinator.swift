@@ -28,7 +28,7 @@ class KeychainCoordinator: NSObject, PAPasscodeViewControllerDelegate {
         let laContext = LAContext()
 
         if #available(iOS 11.0.1, *), laContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil) {
-            touchIDEnabled = touchIDEnabled && laContext.biometryType == .touchID
+            touchIDEnabled = touchIDEnabled && laContext.biometryType == .typeTouchID
         }
         return touchIDEnabled
     }
@@ -37,7 +37,7 @@ class KeychainCoordinator: NSObject, PAPasscodeViewControllerDelegate {
         let laContext = LAContext()
 
         if #available(iOS 11.0.1, *), laContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil) {
-            faceIDEnabled = faceIDEnabled && laContext.biometryType == .faceID
+            faceIDEnabled = faceIDEnabled && laContext.biometryType == .typeFaceID
         }
         return faceIDEnabled
     }

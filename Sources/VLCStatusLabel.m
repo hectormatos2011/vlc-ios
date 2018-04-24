@@ -60,10 +60,11 @@
 
     [self setNeedsDisplay];
 
-    if (_displayTimer)
+    if (_displayTimer) {
         [_displayTimer invalidate];
-    else
+    } else {
         [self setHidden:NO animated:YES];
+    }
 
     _displayTimer = [NSTimer scheduledTimerWithTimeInterval:1.5
                                                      target:self
@@ -80,7 +81,7 @@
 
 - (void)setHidden:(BOOL)hidden animated:(BOOL)animated
 {
-    CGFloat alpha = hidden? 0.0f: 1.0f;
+    CGFloat alpha = hidden ? 0.0f : 1.0f;
 
     if (!hidden) {
         self.alpha = 0.0f;
@@ -95,7 +96,7 @@
         self.hidden = hidden;
     };
 
-    NSTimeInterval duration = animated? 0.3: 0.0;
+    NSTimeInterval duration = animated ? 0.3 : 0.0;
     [UIView animateWithDuration:duration animations:animationBlock completion:completionBlock];
 }
 
